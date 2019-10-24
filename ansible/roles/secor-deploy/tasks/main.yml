@@ -13,9 +13,9 @@
     patterns: secor-*-SNAPSHOT-bin.tar.gz
   register: file_name
 
-- name: Remove the old artifacts
-  file: name="{{ item }}" state=absent
-  with_items: "{{ file_name.files[0].path }}"
+#- name: Remove the old artifacts
+#  file: name="{{ item }}" state=absent
+#  with_items: "{{ file_name.files[0].path }}"
 
 - name: Copy secor libraries
   copy:
