@@ -56,8 +56,8 @@
       postgresql_db: name="{{ item.name }}" \
                 login_host="{{ postgres.db_url }}" \
                 port="{{ postgres.db_port }}" \
-                login_user="{{ postgres.db_username }}" \
-                login_password="{{ postgres.db_password }}" \
+                login_user="{{ postgres.db_admin_user }}" \
+                login_password="{{ postgres.db_admin_password }}" \
                 encoding='UTF-8' \
                 state=present
       with_items: "{{ postgresql_databases }}"
@@ -70,8 +70,8 @@
                   state=present \
                   login_host="{{ postgres.db_url }}" \
                   port="{{ postgres.db_port }}" \
-                  login_user="{{ postgres.db_username }}" \
-                  login_password="{{ postgres.db_password }}" \
+                  login_user="{{ postgres.db_admin_user }}" \
+                  login_password="{{ postgres.db_admin_password }}" \
                   db="{{ item.db }}"
       with_items: "{{ postgresql_users }}"
 
